@@ -9,7 +9,11 @@
   </a>
 </p>
 
-> Criação de uma API para controle de uma barbearia
+> Criação de uma API para controle de uma barbearia. Banco de dados Postgres
+
+## Tecnologias
+
+Aplicação construida utilizando NodeJS, Express, Typescript, prettier, eslint, typeORM, muter, jsonwebtoken
 
 ## Install
 
