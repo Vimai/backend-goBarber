@@ -13,4 +13,3 @@ export default interface IAppointmentsRepository {
     date: IFindAllInDayFromProviderDTO,
   ): Promise<Appointment[]>;
 }
-}
