@@ -15,6 +15,9 @@ interface IUploadConfig {
 
   config: {
     disk: {};
+    aws: {
+      bucket: string;
+    };
   };
 }
 
@@ -38,5 +41,8 @@ export default {
 
   config: {
     disk: {},
+    aws: {
+      bucket: 'app-gobarber-vimai',
+    },
   },
 };

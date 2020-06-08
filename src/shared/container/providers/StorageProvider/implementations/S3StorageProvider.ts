@@ -27,7 +27,7 @@ class DiskStorageProvider implements IStorageProvider {
 
     await this.client
       .putObject({
-        Bucket: 'app-gobarber-vimai',
+        Bucket: uploadConfig.config.aws.bucket,
         Key: file,
         ACL: 'public-read',
         Body: fileContent,
@@ -35,13 +35,15 @@ class DiskStorageProvider implements IStorageProvider {
       })
       .promise();
 
+    await fs.promises.unlink(originalPath);
+
     return file;
   }
 
   public async deleteFile(file: string): Promise<void> {
     await this.client
       .deleteObject({
-        Bucket: 'app-gobarber-vimai',
+        Bucket: uploadConfig.config.aws.bucket,
         Key: file,
       })
       .promise();
