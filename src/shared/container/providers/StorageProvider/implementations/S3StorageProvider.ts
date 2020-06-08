@@ -23,9 +23,7 @@ class DiskStorageProvider implements IStorageProvider {
       throw new Error('file not found');
     }
 
-    const fileContent = await fs.promises.readFile(originalPath, {
-      encoding: 'utf-8',
-    });
+    const fileContent = await fs.promises.readFile(originalPath);
 
     await this.client
       .putObject({
@@ -34,7 +32,6 @@ class DiskStorageProvider implements IStorageProvider {
         ACL: 'public-read',
         Body: fileContent,
         ContentType,
-        ContentDisposition: `ìnline; filename=${file}`,
       })
       .promise();
 
