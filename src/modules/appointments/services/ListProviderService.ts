@@ -35,8 +35,6 @@ class ListProviderService {
         throw new AppError('User not found');
       }
 
-      console.log('A query no banco foi feita');
-
       await this.cacheProvider.save(`providers-list:${user_id}`, users);
     }
 
