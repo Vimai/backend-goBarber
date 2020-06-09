@@ -11,10 +11,10 @@ export default {
   driver: 'redis',
   config: {
     redis: {
-      host: '127.0.0.1',
-      port: 6379,
+      host: process.env.REDIS_HOST,
+      port: process.env.REDIS_PORT,
       family: 4, // 4 (IPv4) or 6 (IPv6)
-      password: undefined,
+      password: process.env.REDIS_PASS || undefined,
       db: 0,
     },
   },
