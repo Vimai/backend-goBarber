@@ -32,7 +32,7 @@ class ListProviderAppointmentsService {
     let appointments = await this.cacheProvider.recover<Appointment[]>(
       chacheKey,
     );
-    console.log(chacheKey, 'buscando');
+
     if (!appointments) {
       appointments = await this.appointmentsRepository.findAllInDayFromProvider(
         {
@@ -42,7 +42,7 @@ class ListProviderAppointmentsService {
           year,
         },
       );
-      console.log(chacheKey, 'salvando cache');
+
       await this.cacheProvider.save(chacheKey, appointments);
     }
 
