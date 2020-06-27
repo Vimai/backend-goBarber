@@ -1,4 +1,4 @@
-import { Router, Router } from 'express';
+import { Router } from 'express';
 import { celebrate, Segments, Joi } from 'celebrate';
 
 import ProfileController from '@modules/users/infra/http/controllers/ProfileController';
